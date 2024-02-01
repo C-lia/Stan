@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cabeza {
+  margin: 50px;
+  height: 300px;
+  width: 300px;
+  background-image: linear-gradient(
+    rgb(71, 100, 168) 0 30%,
+    rgb(243, 22, 63) 30% 40%,
+    rgb(255, 220, 182) 40% 100%
+  );
+  border-radius: 50%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 75px 75px 75px 75px;
+  grid-template-rows: 125px 100px 75px;
+  grid-template-areas:
+    '. . . .'
+    '. o1 o2 .'
+    ' . boca boca .';
+
+  &::before {
+    position: absolute;
+    content: '';
+    grid-area: pompon;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: rgb(243, 22, 63);
+    top: 20px;
+  }
+}
+
+/* .pompon {
+  grid-area: pompon;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: red;
+} */
+
+.ojos {
+  height: 100px;
+  width: 80px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+#o1 {
+  grid-area: o1;
+  transform: rotate(30deg);
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: black;
+    left: 35px;
+    top: 25px;
+  }
+}
+
+#o2 {
+  grid-area: o2;
+  transform: rotate(-30deg);
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: black;
+    left: 25px;
+    top: 25px;
+  }
+}
+
+.boca {
+  grid-area: boca;
+  height: 15px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: rgb(255, 220, 182);
+  border-bottom: 3px solid;
+}
